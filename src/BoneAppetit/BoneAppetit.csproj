@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>BoneAppetit</AssemblyName>
+    <TargetFrameworks>net48</TargetFrameworks>
+    <LangVersion>10</LangVersion>
+    <RootNamespace>BoneAppetit</RootNamespace>
+    <IsPublishable>False</IsPublishable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>embedded</DebugType>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>WTFPL</PackageLicenseExpression>
+    <Copyright>Copyright © RockerKitten and sbtoon 2021 - 2026</Copyright>
+    <PackageProjectUrl>https://github.com/RockerKitten/BoneAppetit/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RockerKitten/BoneAppetit/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>RockerKitten, sbtoon, Digitalroot</Authors>
+    <Company></Company>
+    <Product>RockerKitten Valheim BoneAppetit</Product>
+    <Description>RockerKitten's BoneAppetit for Valheim</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RestoreAdditionalProjectSources>
+      https://nuget.bepinex.dev/v3/index.json;
+      https://digitalroot-valheim-nuget.s3.us-west-2.amazonaws.com/index.json
+    </RestoreAdditionalProjectSources>
+    <VersionPrefix>3.4.0</VersionPrefix>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\customfood" />
+    <None Remove="Assets\grill" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".nx\description.bbcode.txt" />
+    <Content Include=".ts\icon.png" />
+    <Content Include=".ts\manifest.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\customfood" />
+    <EmbeddedResource Include="Assets\grill" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="[5.4.21]">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Digitalroot.Valheim.Modding.Framework" Version="1.0.7" />
+    <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Fody" Version="[6.6.0]">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ILMerge.Fody" Version="[1.22.0]">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Translations\English\translations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

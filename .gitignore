@@ -375,3 +375,7 @@ Environment.props
 */Package/plugins/*
 /Thunderstore_Release/plugins/BoneAppetit.dll
 /Thunderstore_Release/Thunderstore_Release.zip
+/archive/JotunnModStub/Package/plugins/BoneAppetit.dll
+/archive/libraries
+/archive/Unity_Project/Assets/Plugins/NGTools
+/archive/Unity_Project/.vsconfig
